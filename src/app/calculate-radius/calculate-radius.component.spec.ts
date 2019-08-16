@@ -22,4 +22,10 @@ describe('CalculateRadiusComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it(`should have as volume 'gouminator'`, () => {
+    const radius = 10;
+    const volume = (4 / 3) * Math.PI * (radius ** 3);
+    expect(volume).toEqual(33510321.638291124);
+  });
 });
