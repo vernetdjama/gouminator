@@ -1,0 +1,24 @@
+<form [formGroup]="gouminatorFormGroup" (ngSubmit)="calculateGouminator()">
+  <div class="form-group form-primary">
+    <input type="number" class="form-control" placeholder="Input" formControlName="radius"
+      [ngClass]="{ 'is-invalid': radius.dirty && radius.invalid }">
+    <div *ngIf="radius.dirty && radius.invalid" class="invalid-feedback">
+      <div *ngIf="radius.hasError('required')">
+        Le champ est requis !
+      </div>
+      <div *ngIf="radius.hasError('number')">
+        Le champ doit être un nombre !
+      </div>
+    </div>
+  </div>
+  <div class="row" *ngIf="result !== undefined">
+    <div class="col-12">
+      <p>Le resultat est : {{result}}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 d-flex justify-content-between">
+      <button type="submit" [disabled]="gouminatorFormGroup.invalid" class="btn btn-primary btn-block">Calculer</button>
+    </div>
+  </div>
+</form>
