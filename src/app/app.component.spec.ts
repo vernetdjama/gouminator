@@ -32,4 +32,10 @@ describe('AppComponent', () => {
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('h1').textContent).toContain('Welcome to gouminator!');
   });
+
+  it(`should have as volume 'gouminator'`, () => {
+    const radius = 10;
+    const volume = (4 / 3) * Math.PI * (radius ** 3);
+    expect(volume).toEqual(33510321.638291124);
+  });
 });
