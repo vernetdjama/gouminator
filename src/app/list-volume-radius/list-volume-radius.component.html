@@ -1,0 +1,9 @@
+<ul *ngIf="datas?.length; else noData">
+  <li *ngFor="let item of datas">
+    <div>Rayon : {{item.radius}}</div>
+    <div>Volume : {{item.volume}}</div>
+  </li>
+</ul>
+<ng-template #noData>
+  <div class="text-center">Aucun donnée n'a été trouvée</div>
+</ng-template>
